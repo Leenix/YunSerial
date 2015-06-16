@@ -1,3 +1,5 @@
+Adapted from https://gist.github.com/wayoda/db3c023417757f726088
+
 A bit about the Yun's Bridge
 =============================
 
