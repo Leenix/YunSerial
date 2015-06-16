@@ -1,0 +1,49 @@
+#!/bin/sh /etc/rc.common
+# (C) 2008 openwrt.org
+
+# Modified from Wayoda - https://gist.github.com/wayoda/db3c023417757f726088
+
+###############################################################################
+# Installation
+# ============
+# 
+# 1) Copy boot-handshake to the Yun's /etc/init.d/ 
+# 2) In commandline, type the following to make the file executable
+#     
+#   chmod a+x /etc/init.d/boot-handshake
+# 
+# 3) Install the script
+# 
+#    /etc/init.d/boot-handshake enable
+# 
+# 4) You can test the script with the following commands:
+# 
+#    /etc/init.d/boot-handshake start
+#    /etc/init.d/boot-handshake stop
+###############################################################################
+
+START=99
+STOP=01
+
+start() {
+    [ -e /sys/class/gpio/ ] && {
+        echo "Arduino Handshake On"
+
+        echo "19" > /sys/class/gpio/export
+        echo "high" > /sys/class/gpio/gpio19/direction
+        echo "1" > /sys/class/gpio/gpio22/value
+        echo "0" > /sys/class/gpio/gpio19/value
+    }
+}
+
+stop() {
+    [ -e /sys/class/gpio/ ] && {
+        echo "Arduino Handshake Off"
+        echo "1" > /sys/class/gpio/gpio19/value
+        echo "19" > /sys/class/gpio/unexport
+        echo "0" > /sys/class/gpio/gpio22/value
+    }
+}
+
+
+

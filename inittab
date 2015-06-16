@@ -1,0 +1,6 @@
+::sysinit:/etc/init.d/rcS S boot
+::shutdown:/etc/init.d/rcS K shutdown
+
+# Comment out the following to disable the Yun bridge and allow fast serial
+# communication with custom code.
+#ttyATH0::askfirst:/bin/ash --login
