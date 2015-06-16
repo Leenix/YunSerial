@@ -7,7 +7,7 @@
 # Installation
 # ============
 # 
-# 1) Copy boot-handshake to the Yun's /etc/init.d/ 
+# 1) Copy boot-handshake to the Yun's /etc/init.d/ folder
 # 2) In commandline, type the following to make the file executable
 #     
 #   chmod a+x /etc/init.d/boot-handshake
