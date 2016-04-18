@@ -8,6 +8,18 @@ The Arduino Yun combines an Arduino microcontroller (ATmega32u4) with a Linux pr
 
 The following steps will guide you to disable the Yun's bridging functionality to allow custom serial functionality.
 
+# Connect to the Yun
+
+To configure the Yun, we'll need to get access to it's command line terminal. The easiest way to do this is to use SSH.
+If you're not familiar with SSH, [follow this link for some more information](https://www.arduino.cc/en/Tutorial/LinuxCLI).
+
+Then, using your preferred SSH client or method, connect the Yun to your network using an Ethernet cable or WiFi (or connect to the Yun's WiFi hotspot). By default, you'll find the Yun at `192.168.240.1` or `arduino.local` on your network.
+
+The default login for the Yun is:
+
+    Username: root
+    Password: arduino
+
 # Stop the Bridge shell
 
 The Bridge shell starts after the Yun has booted. You can prevent this shell from starting by commenting out its entry in the Yun's initialization table.
