@@ -49,6 +49,8 @@ The basic idea is that serial transmissions from the Arduino side are suppressed
 
 1) Copy boot-handshake to the Yun's /etc/init.d/
 
+    scp <local path>/boot-handshake root@<yun address>:/etc/init.d/boot-handshake
+
 2) In commandline, type the following to make the file executable
 
     chmod a+x /etc/init.d/boot-handshake
