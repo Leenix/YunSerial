@@ -12,7 +12,11 @@ The following steps will guide you to disable the Yun's bridging functionality t
 
 The Bridge shell starts after the Yun has booted. You can prevent this shell from starting by commenting out its entry in the Yun's initialization table.
 
-In the file, `/etc/inittab`, place a '#' before the last line to disable the bridge.
+Open the `/etc/inittab` file in your preferred editor.
+
+    nano /etc/inittab
+    
+Now insert a '#' before the last line to disable the bridge.
 
     ::sysinit:/etc/init.d/rcS S boot
     ::shutdown:/etc/init.d/rcS K shutdown
